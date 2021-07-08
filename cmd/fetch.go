@@ -24,8 +24,8 @@ import (
 // fetchCmd represents the fetch command
 var fetchCmd = &cobra.Command{
 	Use:   "fetch",
-	Short: "find and unzip all RAR files from root directory provided",
-	Long:  `lorem ipsum`,
+	Short: "Find and unzip all RAR files from root directory provided",
+	Long:  `Unpacks RAR files recursively within a specified directory so you can concentrate on enjoying your content.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("fetch called")
 	},
