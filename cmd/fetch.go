@@ -17,6 +17,7 @@ package cmd
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -26,21 +27,14 @@ var fetchCmd = &cobra.Command{
 	Use:   "fetch",
 	Short: "Find and unzip all RAR files from root directory provided",
 	Long:  `Unpacks RAR files recursively within a specified directory so you can concentrate on enjoying your content.`,
+	Args:  cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("fetch called")
+		directories := args
+		fmt.Println("🐕 sniff...sniff...Woof! " + strings.Join(args, " "))
+		fmt.Println(directories)
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(fetchCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// fetchCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// fetchCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
