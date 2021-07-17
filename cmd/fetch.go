@@ -17,10 +17,13 @@ package cmd
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/spf13/cobra"
 )
+
+func unzip(src string) {
+	fmt.Println("🐕 sniff...sniff...Woof! ", src)
+}
 
 var fetchCmd = &cobra.Command{
 	Use:   "fetch",
@@ -28,9 +31,7 @@ var fetchCmd = &cobra.Command{
 	Long:  `Unpacks RAR files recursively within a specified directory so you can concentrate on enjoying your content.`,
 	Args:  cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		directories := args
-		fmt.Println("🐕 sniff...sniff...Woof! " + strings.Join(args, " "))
-		fmt.Println(directories)
+		unzip(args[0])
 	},
 }
 
