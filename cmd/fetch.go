@@ -16,6 +16,7 @@ limitations under the License.
 package cmd
 
 import (
+	"archive/zip"
 	"fmt"
 
 	"github.com/spf13/cobra"
@@ -23,6 +24,18 @@ import (
 
 func unzip(src string) {
 	fmt.Println("🐕 sniff...sniff...Woof! ", src)
+
+	// var filenames []string
+	r, err := zip.OpenReader(src)
+
+	if err != nil {
+		return
+	}
+
+	defer r.Close()
+	// defer statement defers execution of a function until surrounding function returns
+	// close file once program has completed
+
 }
 
 var fetchCmd = &cobra.Command{
