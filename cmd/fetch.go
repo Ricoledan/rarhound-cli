@@ -48,7 +48,7 @@ func unzip(src string, dest string) ([]string, error) {
 		}
 
 		filenames = append(filenames, fpath)
-		println(filenames)
+		println("filename: ", filenames)
 
 		if f.FileInfo().IsDir() {
 			os.MkdirAll(fpath, os.ModePerm)
@@ -87,7 +87,7 @@ var fetchCmd = &cobra.Command{
 	Long:  `Unpacks RAR files recursively within a specified directory so you can concentrate on enjoying your content.`,
 	Args:  cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		unzip(args[0], "dist/")
+		unzip(args[0], args[1])
 	},
 }
 
