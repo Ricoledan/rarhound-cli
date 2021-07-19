@@ -48,7 +48,7 @@ func unzip(src string, dest string) ([]string, error) {
 		}
 
 		filenames = append(filenames, fpath)
-		println("filename: ", filenames)
+		println("filename: ", filenames, "filepath: ", fpath)
 
 		if f.FileInfo().IsDir() {
 			os.MkdirAll(fpath, os.ModePerm)
