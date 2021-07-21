@@ -13,3 +13,7 @@
 ## build executable
 
 `go build -o rarhound-cli main.go`
+
+## sample execution
+
+`go run main.go fetch example/Naruto,\ Vol.\ 72.pdf.zip dist`
