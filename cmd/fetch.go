@@ -42,13 +42,14 @@ func unzip(src string, dest string) ([]string, error) {
 
 	for _, f := range r.File {
 		fpath := filepath.Join(dest, f.Name)
+		println("fpath: ", fpath)
 
 		if !strings.HasPrefix(fpath, filepath.Clean(dest)+string(os.PathSeparator)) {
 			return filenames, fmt.Errorf("%s: illegal file path", fpath)
 		}
 
 		filenames = append(filenames, fpath)
-		println("filename: ", filenames, "filepath: ", fpath)
+		println("filenames: ", filenames)
 
 		if f.FileInfo().IsDir() {
 			os.MkdirAll(fpath, os.ModePerm)
