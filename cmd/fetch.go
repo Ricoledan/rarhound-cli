@@ -27,6 +27,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// TODO: update app to unrar instead of unzip
 func unzip(src string, dest string) ([]string, error) {
 	fmt.Println("🐕 sniff...sniff...Woof! ", src)
 
